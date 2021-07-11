@@ -7,6 +7,10 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 
 
+/** Own components */
+
+import { HomeHeaderComponent } from '../components/home-header/home-header.component';
+import { HomeTabComponent } from '../components/home-tab/home-tab.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -14,6 +18,9 @@ import { HomePageRoutingModule } from './home-routing.module';
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage]
+  declarations: [
+    HomePage,
+    HomeHeaderComponent,
+    HomeTabComponent]
 })
 export class HomePageModule {}
