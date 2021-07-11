@@ -1,6 +1,10 @@
 <ion-content fullscreen="true">
   <app-home-header></app-home-header>
 
+  <!--Account-->
+  <app-card *ngIf="account !== undefined" [movement] = "account"></app-card>
+
+
   <!--Cards-->
   <app-card *ngFor="let movement of movements"
     [movement] = "movement"

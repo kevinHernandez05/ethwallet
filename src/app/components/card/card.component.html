@@ -12,7 +12,7 @@
 			<div class="w-full ">
 				<div class="text-2xl text-gray-700 uppercase text-right">{{ movement.balance }} eth</div>
 			</div>
-			<div class="flex mt-3">
+			<div class="flex mt-3" *ngIf = "movement.date !=='' || movement.percentage !== ''">
 				<div class="w-full content-between ">
 					<p class="rounded-full max-w-max px-3 w-auto font-mono border border-red-500 text-gray-700  ">
 						{{ movement.date }}</p>
