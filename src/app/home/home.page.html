@@ -1,5 +1,12 @@
 <ion-content fullscreen="true">
   <app-home-header></app-home-header>
+
+  <!--Cards-->
+  <app-card *ngFor="let movement of movements"
+    [movement] = "movement"
+
+  ></app-card>
+
 </ion-content>
 
 <ion-footer>

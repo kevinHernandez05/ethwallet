@@ -1,3 +1,26 @@
-<p>
-  card works!
-</p>
+<div class="px-5 mt-5">
+	<div class='flex max-w-sm w-full bg-gray-300 shadow-md rounded-lg overflow-hidden mx-auto'>
+		<div class="max-w-lg  w-full bg-white  p-5 rounded-md">
+			<div class="flex ">
+				<div class="w-full content-between text-w">
+					<div class="text-2xl text-gray-900 uppercase">{{ movement.cuentaEth | slice:0:10  }}...</div>
+				</div>
+				<div class="">
+					<p class="rounded-full  h-12 w-12 bg-red-400"></p>
+				</div>
+			</div>
+			<div class="w-full ">
+				<div class="text-2xl text-gray-700 uppercase text-right">{{ movement.balance }} eth</div>
+			</div>
+			<div class="flex mt-3">
+				<div class="w-full content-between ">
+					<p class="rounded-full max-w-max px-3 w-auto font-mono border border-red-500 text-gray-700  ">
+						{{ movement.date }}</p>
+				</div>
+				<div class="mx-1">
+					<p class="rounded-full px-2  border text-gray-700 border-green-500 ">{{ movement.percentage }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

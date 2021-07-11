@@ -11,6 +11,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomeHeaderComponent } from '../components/home-header/home-header.component';
 import { HomeTabComponent } from '../components/home-tab/home-tab.component';
+import { CardComponent } from '../components/card/card.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -21,6 +22,7 @@ import { HomeTabComponent } from '../components/home-tab/home-tab.component';
   declarations: [
     HomePage,
     HomeHeaderComponent,
-    HomeTabComponent]
+    HomeTabComponent,
+    CardComponent]
 })
 export class HomePageModule {}
