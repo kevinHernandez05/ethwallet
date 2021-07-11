@@ -19,6 +19,15 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "allowedCommonJsDependencies": [
+              "stream-browserify",
+              "crypto-browserify",
+              "stream-http",
+              "https-browserify",
+              "os-browserify",
+              "assert",
+              "url"
+            ],
             "assets": [
               {
                 "glob": "**/*",

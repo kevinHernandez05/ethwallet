@@ -8,8 +8,14 @@ export class Web3Service {
 
   infuraUrl: string = 'https://mainnet.infura.io/v3/7f1789c7008f4f02b8c53ab149849ccb';
 
-  constructor(private web3:Web3) {
-    web3 = new Web3(this.infuraUrl);
+  private web3: any;
+
+  constructor() {
+    this.web3 = new Web3(
+      new Web3.providers.HttpProvider(this.infuraUrl)
+    );
+
+    this.getInfoFromAccount('');
   }
 
   getInfoFromAccount(account: string){
