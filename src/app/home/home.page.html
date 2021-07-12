@@ -4,12 +4,11 @@
   <!--Account-->
   <app-card *ngIf="account !== undefined" [movement] = "account"></app-card>
 
-
   <!--Cards-->
-  <app-card *ngFor="let movement of movements"
-    [movement] = "movement"
 
-  ></app-card>
+  <div *ngIf="movements.result">
+    <app-card-transaction *ngFor = "let transact of movements.result" [transact]="transact"></app-card-transaction>
+  </div>
 
 </ion-content>
 

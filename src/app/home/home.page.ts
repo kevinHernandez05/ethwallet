@@ -3,8 +3,8 @@ import { IMovement } from '../model/movement.model';
 import Web3 from 'web3';
 
 //Services
-// import { Web3Service } from '../services/web3.service';
-
+import { EtherscanService } from '../services/etherscan.service';
+import { IEtherscan } from '../model/etherscan.model';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -13,7 +13,7 @@ import Web3 from 'web3';
 
 export class HomePage {
 
-  private movements: IMovement[];
+  private movements: IEtherscan;
   private web3: any;
 
   private account: IMovement;
@@ -24,7 +24,7 @@ export class HomePage {
   ether: number = 0;
   euro: number = 0;
 
-  constructor() {
+  constructor(private eth:EtherscanService) {
     //this.movements = this.mockMovements();
     let conn = this.web3jsInit(this.infuraUrl);
     console.log(`Connetion state: ${conn}`);
@@ -33,6 +33,7 @@ export class HomePage {
   web3jsInit(infuraUrl:string): boolean{
     this.web3 = new Web3(infuraUrl);
     this.getBalance(this.address);
+    this.getTransactions(this.address);
     return true;
   }
 
@@ -55,11 +56,34 @@ export class HomePage {
   }
 
   getTransactions(address: string){
-    this.web3.eth.getTransaction(this.address, (err, tran)=>{
-    });
+    this.eth.getTransactions(this.address).subscribe(
+      data =>{
+        this.movements = data;
+      }
+    );
   }
 
+  async checkBlock() {
+    let block = await this.web3.eth.getBlock('latest');
+    let latestNumber = block.number;
 
+    for(let i = 1; i <= latestNumber; i++){
+      console.log(`searching block: #${i}`);
+      if(block != null && block.transactions != null){
+        for(let txHash of block.transactions){
+          let tx = await this.web3.eth.getTransaction(txHash);
+
+          if(this.account.cuentaEth == tx.to || this.account.cuentaEth == tx.from){
+            console.log(`Transaction found on block: ${i}`);
+            console.log({address: tx.from, value: this.web3.util.fromWei(tx.value, 'ether')});
+          }
+          else{
+            console.log(`Not found on block #${i}`);
+          }
+        }
+      }
+    }
+  }
 
   mockMovements(): IMovement[]{
     return [
@@ -99,3 +123,4 @@ export class HomePage {
     ];
   }
 }
+
