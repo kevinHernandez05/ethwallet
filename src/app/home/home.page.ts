@@ -23,6 +23,7 @@ export class HomePage {
   balance: any;
   ether: number = 0;
   euro: number = 0;
+  transactLoaded = false;
 
   constructor(private eth:EtherscanService) {
     //this.movements = this.mockMovements();
@@ -56,9 +57,20 @@ export class HomePage {
   }
 
   getTransactions(address: string){
+
     this.eth.getTransactions(this.address).subscribe(
       data =>{
+
+        data.result.map((a) =>{
+          a.value = this.web3.utils.fromWei(a.value, 'ether');
+          a.timeStamp = a.timeStamp * 1000;
+          a.gasPrice = this.web3.utils.fromWei(a.gasPrice, 'gwei');
+        });
+
         this.movements = data;
+      },
+      (err)=>{
+        console.warn(`error: ${err}`);
       }
     );
   }

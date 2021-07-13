@@ -3,7 +3,7 @@
 		<div class="max-w-lg  w-full bg-white  p-5 rounded-md">
 			<div class="flex ">
 				<div class="w-full content-between text-w">
-					<div class="text-2xl text-gray-900 uppercase">{{transact.to | slice:0:10 }}...</div>
+					<div class="text-2xl text-gray-900 uppercase">{{transact.to | slice:0:10}}...</div>
 				</div>
 				<div class="">
 					<p class="rounded-full  h-12 w-12 bg-red-400"></p>
@@ -12,13 +12,13 @@
 			<div class="w-full ">
 				<div class="text-2xl text-gray-700 uppercase text-right">{{transact.value}} eth</div>
 			</div>
-			<div class="flex mt-3" *ngIf = "movement.date !=='' || movement.percentage !== ''">
+			<div class="mt-3" *ngIf = "transact.timeStamp !=='' || transact.gasUsed !== ''">
 				<div class="w-full content-between ">
 					<p class="rounded-full max-w-max px-3 w-auto font-mono border border-red-500 text-gray-700  ">
-						{{transact.timeStamp}}</p>
+						{{transact.timeStamp | date}}</p>
 				</div>
-				<div class="mx-1">
-					<p class="rounded-full px-2  border text-gray-700 border-green-500 ">{{transact.gasUsed}}</p>
+				<div class="mt-1">
+					<p class="rounded-full  max-w-max px-3 w-auto font-mono border text-gray-700 border-green-500 ">Gas used: {{transact.gasPrice}} gwei</p>
 				</div>
 			</div>
 		</div>

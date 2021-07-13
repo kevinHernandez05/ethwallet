@@ -6,8 +6,8 @@
 
   <!--Cards-->
 
-  <div *ngIf="movements.result">
-    <app-card-transaction *ngFor = "let transact of movements.result" [transact]="transact"></app-card-transaction>
+  <div *ngIf="movements !== undefined">
+    <app-card-transaction *ngFor = "let movement of movements.result" [transact]="movement"></app-card-transaction>
   </div>
 
 </ion-content>

@@ -1,6 +1,6 @@
 export interface IEtherResult{
   blockNumber: number;
-  timeStamp: string;
+  timeStamp: number;
   hash: string;
   blockHash: string;
   transactionIndex: string;
