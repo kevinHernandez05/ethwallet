@@ -64,7 +64,7 @@ export class HomePage {
         data.result.map((a) =>{
           a.value = this.web3.utils.fromWei(a.value, 'ether');
           a.timeStamp = a.timeStamp * 1000;
-          a.gasPrice = this.web3.utils.fromWei(a.gasPrice, 'gwei');
+          a.gasUsed = this.web3.utils.fromWei(a.gasUsed, 'gwei');
         });
 
         this.movements = data;

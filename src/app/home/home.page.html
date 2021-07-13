@@ -1,5 +1,5 @@
 <ion-content fullscreen="true">
-  <app-home-header></app-home-header>
+  <app-home-header [page]='home'></app-home-header>
 
   <!--Account-->
   <app-card *ngIf="account !== undefined" [movement] = "account"></app-card>

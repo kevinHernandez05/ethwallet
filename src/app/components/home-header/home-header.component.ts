@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home-header',
@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeHeaderComponent implements OnInit {
 
-  constructor() { }
+  @Input() page: string;
+  showTextbox: boolean;
+
+  constructor() {
+    // this.showTextbox = this.page === 'home' ?? true;
+    this.showTextbox = true;
+  }
 
   ngOnInit() {}
 

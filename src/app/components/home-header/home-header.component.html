@@ -95,7 +95,7 @@
         </div>
       </div>
     </nav>
-    <div class="flex items-center justify-between pl-3 pr-2 z-10">
+    <div *ngIf='showTextbox === true' class="flex items-center justify-between pl-3 pr-2 z-10">
       <div class="relative mr-3 w-full">
         <input
           type="text"
@@ -119,38 +119,6 @@
           </svg>
         </div>
       </div>
-      <button
-        class="
-          p-1
-          w-14
-          h-11
-          bg-gray-900
-          rounded-xl
-          hover:shadow-lg
-          text-gray-400
-          shadow
-          transition
-          ease-in
-          duration-200
-          focus:outline-none
-          z-20
-        "
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-6 h-6 inline-block"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
-          ></path>
-        </svg>
-      </button>
     </div>
   </div>
 </div>
