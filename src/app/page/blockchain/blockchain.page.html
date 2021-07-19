@@ -1,0 +1,13 @@
+<div class="background-app">
+    <app-home-header [page]='home'></app-home-header>
+
+    <!--Account-->
+    <app-card *ngIf="account !== undefined" [movement] = "account"></app-card>
+
+    <!--Cards-->
+
+    <div *ngIf="movements !== undefined">
+      <app-card-transaction *ngFor = "let movement of movements.result" [transact]="movement"></app-card-transaction>
+    </div>
+
+</div>

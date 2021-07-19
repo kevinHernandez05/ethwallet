@@ -9,11 +9,8 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 
 /** Own components */
-
-import { HomeHeaderComponent } from '../components/home-header/home-header.component';
 import { HomeTabComponent } from '../components/home-tab/home-tab.component';
-import { CardComponent } from '../components/card/card.component';
-import { CardTransactionComponent } from '../components/card-transaction/card-transaction.component';
+
 
 @NgModule({
   imports: [
@@ -24,9 +21,6 @@ import { CardTransactionComponent } from '../components/card-transaction/card-tr
   ],
   declarations: [
     HomePage,
-    HomeHeaderComponent,
-    HomeTabComponent,
-    CardComponent,
-    CardTransactionComponent]
+    HomeTabComponent]
 })
 export class HomePageModule {}

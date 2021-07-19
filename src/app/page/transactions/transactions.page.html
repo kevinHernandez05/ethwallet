@@ -1,9 +1,11 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>transactions</ion-title>
-  </ion-toolbar>
+  <app-home-header-no-textbox></app-home-header-no-textbox>
 </ion-header>
 
 <ion-content>
 
+
+  <div *ngIf="movements !== undefined">
+    <app-card-transaction *ngFor = "let movement of movements.result" [transact]="movement"></app-card-transaction>
+  </div>
 </ion-content>

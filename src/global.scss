@@ -23,6 +23,9 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/* homemade css, utils.css*/
+@import "./theme/utils.scss";
+
 /* Optional CSS utils that can be commented out */
 // @import "~@ionic/angular/css/padding.css";
 // @import "~@ionic/angular/css/float-elements.css";
