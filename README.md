@@ -14,12 +14,12 @@
 ## Capturas de pantalla 
 
 ### Cantidad total de la billetera
-<img src="https://github.com/kevinHernandez05/ethwallet/blob/master/ss/blockchain.png?raw=true" align="center" height="500px" width="282px"/>
+<img src="https://github.com/kevinHernandez05/ethwallet/blob/master/ss/blockchain.png?raw=true" align="center" height="25%"/>
 
 ### Transacciones hechas dentro de la billetera
-<img src="https://github.com/kevinHernandez05/ethwallet/blob/master/ss/transactions.png?raw=true" align="center" height="500px" width="282px"/>
+<img src="https://github.com/kevinHernandez05/ethwallet/blob/master/ss/transactions.png?raw=true" align="center" height="25%"/>
 
 ### Ventana "Acerca de"
-<img src="https://github.com/kevinHernandez05/ethwallet/blob/master/ss/Acerca-de.png?raw=true" align="center" height="500px" width="282px"/>
+<img src="https://github.com/kevinHernandez05/ethwallet/blob/master/ss/Acerca-de.png?raw=true" align="center" height="25%"/>
 
 
